@@ -1,18 +1,19 @@
 #define READSOILPIN A0
 #define MEASURE_DELAY 500
 
+#define LED_RED A1
+#define LED_YELLOW A2
+#define LED_GREEN A3
+
 #define POTI_PIN A5
 
 #define MIN_SOIL 20
 #define MAX_SOIL 90
 #define MAX_DIFF_SOIL 8
-#define LED_GREEN A3
-#define LED_YELLOW A2
-#define LED_RED A1
 
-float showGreen = 78;
-float showYellow = 69;
 float showRed = 60;
+float showYellow = 69;
+float showGreen = 78;
 
 byte leds = 0;
 
@@ -41,6 +42,7 @@ void loop() {
     Serial.print("showRed - "); Serial.println(percent);
     leds = LED_RED;
   }
+  
   digitalWrite(leds, HIGH);
   delay(MEASURE_DELAY);
 }
